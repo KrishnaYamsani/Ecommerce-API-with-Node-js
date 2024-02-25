@@ -4,6 +4,7 @@ const bodyparser = require('body-parser');
 const pg = require('pg');
 const jwt = require('jsonwebtoken');
 const pool = require('./db');
+const limiter = require('./ratelimit');
 const app = express();
 
 // DB connection
@@ -15,6 +16,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 
 //express middleware
 app.use(express.json());
+app.use(limiter);
 
 // User function 
 
