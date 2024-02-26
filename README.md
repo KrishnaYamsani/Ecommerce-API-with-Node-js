@@ -1,6 +1,14 @@
 <h3 align="center">REST API FOR ECOMMERCE APPLICATION</h3> 
 <br>
 
+## Inventive Choices
+
+<ol> There are a few decisions that I took during the project which I thought would be worth To mention here. </ol>
+<ol> When a new user is registered successfully I created a cart for the 
+user in carts table. This is implemented by using trigger which triggers after insertion on users table.</ol>
+<ol> Every time A user adds items to the carts,Available items field for that product in products table won't be changed.</ol>
+<ol> After succefull completion of order which in this case adding items in orders table,corresponding products quantity is updated using triggers.It will trigger after insertion on oreders table.</ol>
+
 ## Routes
 ## Register
 <br>Path : '/register'
